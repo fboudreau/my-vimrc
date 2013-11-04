@@ -16,7 +16,10 @@ set expandtab
 set nowrap
 syntax on
 filetype plugin indent on
-
+set smartindent
+set tabstop=4
+set shiftwidth=4
+set expandtab
 
 map <F5> qq
 map <F6> q
