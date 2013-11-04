@@ -1,4 +1,3 @@
-
 set nocompatible               " be iMproved
 filetype off                   " required!
 
@@ -10,6 +9,7 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'taglist.vim'
 Bundle 'vimwiki'
+Bundle 'bufkill.vim'
 
 set autoindent
 set expandtab
@@ -22,5 +22,5 @@ map <F5> qq
 map <F6> q
 map <F7> @q
 map <leader>nt :NERDTreeToggle<CR>
-
+map <leader>tl :Tlist<CR>
 
