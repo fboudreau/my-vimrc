@@ -24,6 +24,14 @@ set expandtab
 map <F5> qq
 map <F6> q
 map <F7> @q
+map <C-up> 5k
+map <C-down> 5j
 map <leader>nt :NERDTreeToggle<CR>
 map <leader>tl :Tlist<CR>
 
+
+" Tlist
+if has("win32") || has("win16")
+  let Tlist_Ctags_Cmd = 'c:\"Program Files"\ctags58\\ctags.exe'
+endif
+let Tlist_Use_Right_Window = 1
