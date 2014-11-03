@@ -76,6 +76,7 @@ set nowrap
 
 
 let g:vimwiki_list = [{'path': '/mnt/home/vimwiki/'}]
+let g:vimwiki_html_header_numbering=0/1/2/3/4
 
 "" Search for and load cscope file, starting from the current directory, going up.
 function! LoadCscope()
