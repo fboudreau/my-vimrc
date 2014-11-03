@@ -39,6 +39,7 @@ if has("gui_running")
     set guioptions-=T  "remove toolbar
     set guioptions-=r  "remove right scrollbar
     set guioptions-=L  "remove right scrollbar
+    set guioptions-=M
 
     if has("gui_win32")
         set guifont=Courier\ New:h12:cANSI
