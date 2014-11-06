@@ -1,6 +1,7 @@
 set nocompatible
 filetype off                  " required!
 
+
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
@@ -48,15 +49,16 @@ if has("gui_running")
     " Enable popup menu
     set mousemodel=popup
 
-    set cscopequickfix=s-,c-,d-,i-,t-,e-
-    set cst " use cscope for ctrl=] (tag search)
-
     " Add CSCOPE commands to popup menu
     amenu PopUp.cscope.Find\ Symbol :cs f s <cword><CR>
     amenu PopUp.cscope.Find\ Callers :cs f c <cword><CR>
     amenu PopUp.cscope.Find\ Files :cs f f <cword><CR>
 
 endif
+
+set cscopequickfix=s-,c-,d-,i-,t-,e-
+set cst " use cscope for ctrl=] (tag search)
+
 
 map <f5> qq
 map <f6> q
@@ -76,7 +78,7 @@ set number
 set nowrap
 
 
-let g:vimwiki_list = [{'path': '/mnt/home/vimwiki/'}]
+let g:vimwiki_list = [{'path': '~/vimwiki/'}]
 let g:vimwiki_html_header_numbering=0/1/2/3/4
 
 "" Search for and load cscope file, starting from the current directory, going up.
@@ -112,3 +114,5 @@ function! DevSetup()
   :NERDTreeToggle<CR>
   :Tlist
 endfunction
+
+cd ~
