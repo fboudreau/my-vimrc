@@ -2,7 +2,7 @@ set nocompatible
 filetype off                  " required!
 
 " https://github.com/gmarik/Vundle.vim.git
-set rtp+=~/.vim/bundle/vundle/
+set rtp+=~/.vim/bundle/Vundle.vim/
 call vundle#rc()
 
 Bundle 'bufexplorer.zip'
