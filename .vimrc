@@ -5,8 +5,8 @@ filetype off                  " required!
 set rtp+=~/.vim/bundle/Vundle.vim/
 call vundle#begin()
 
+Plugin 'gmarik/Vundle.vim'
 Plugin 'bufexplorer.zip'
-Plugin 'vundle'
 Plugin 'SuperTab-continued'
 Plugin 'bufkill.vim'
 Plugin 'scrooloose/nerdtree'
@@ -18,7 +18,7 @@ Plugin 'honza/vim-snippets'
 Plugin 'vimwiki'
 Plugin 'taglist.vim'
 
-call vundle#begin()
+call vundle#end()
 
 filetype plugin indent on
 
