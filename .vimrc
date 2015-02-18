@@ -3,20 +3,22 @@ filetype off                  " required!
 
 " https://github.com/gmarik/Vundle.vim.git
 set rtp+=~/.vim/bundle/Vundle.vim/
-call vundle#rc()
+call vundle#begin()
 
-Bundle 'bufexplorer.zip'
-Bundle 'vundle'
-Bundle 'SuperTab-continued'
-Bundle 'bufkill.vim'
-Bundle 'scrooloose/nerdtree'
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'MarcWeber/vim-addon-mw-utils'
-Bundle 'tomtom/tlib_vim'
-Bundle 'garbas/vim-snipmate'
-Bundle 'honza/vim-snippets'
-Bundle 'vimwiki'
-Bundle 'taglist.vim'
+Plugin 'bufexplorer.zip'
+Plugin 'vundle'
+Plugin 'SuperTab-continued'
+Plugin 'bufkill.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
+Plugin 'honza/vim-snippets'
+Plugin 'vimwiki'
+Plugin 'taglist.vim'
+
+call vundle#begin()
 
 filetype plugin indent on
 
