@@ -7,7 +7,8 @@ call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
 Plugin 'bufexplorer.zip'
-Plugin 'SuperTab-continued'
+Plugin 'jamessan/vim-gnupg'
+Plugin 'SuperTab--Van-Dewoestine'
 Plugin 'bufkill.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
@@ -15,20 +16,26 @@ Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
-Plugin 'vimwiki'
+Plugin 'vimwiki/vimwiki'
 Plugin 'taglist.vim'
+Plugin 'duracrisis/vim-fern-utils'
+Plugin 'mileszs/ack.vim'
+Plugin 'qfn'
+Plugin 'Shougo/vimshell.vim'
 
 call vundle#end()
 
 filetype plugin indent on
 
 
+setglobal cm=blowfish2 
+
 if has('win32') || has ("win16")
     let Tlist_Ctags_Cmd = 'c:\ctags58\ctags.exe'
 endif
 
 let Tlist_Use_Right_Window = 1
-let Tlist_Auto_Open = 1
+let Tlist_Auto_Open = 0
 let Tlist_Show_One_File = 1
 
 syntax on
@@ -69,6 +76,7 @@ map <C-up> 5k
 map <C-down> 5j
 map <leader>nt :NERDTreeToggle<CR>
 map <leader>tl :Tlist<CR>
+map <leader>gg :silent grep -r 
 
 set tags=./tags;/
 
@@ -80,41 +88,5 @@ set number
 set nowrap
 
 
-let g:vimwiki_list = [{'path': '~/vimwiki/'}]
+let g:vimwiki_list = [{'path': '/mnt/ienso/shared/Fernand/vimwiki/'},{'path': "~/ocean/vimwiki"}]
 let g:vimwiki_html_header_numbering=0/1/2/3/4
-
-"" Search for and load cscope file, starting from the current directory, going up.
-function! LoadCscope()
-
-    let db = findfile("cscope.out", ".;")
-    if (!empty(db))
-        let path = strpart(db, 0, match(db, "/cscope.out$"))
-        set nocscopeverbose " suppress 'duplicate conneciton' error
-        exec "cs add " . db . " " . path
-        set cscopeverbose
-    endif
-
-endfunction
-au BufEnter /* call LoadCscope() "Call for each buffer that is loaded.
-map <leader>lc :call LoadCscope()<CR>
-
-
-
-" Make android source from within Vim.
-function! MakeAndroid(...)
-    let cwd = getcwd()
-    :echo cwd
-    :echo a:000
-    :cd /mnt/android_hd
-    "make
-    exec "cd  " . cwd
-endfunction
-command! Mandy :call MakeAndroid() <CR>
-map <leader>ma :Mandy<CR>
-
-function! DevSetup()
-  :NERDTreeToggle<CR>
-  :Tlist
-endfunction
-
-cd ~
