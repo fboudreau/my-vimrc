@@ -27,7 +27,6 @@ call vundle#end()
 
 filetype plugin indent on
 
-
 setglobal cm=blowfish2 
 
 if has('win32') || has ("win16")
@@ -67,16 +66,6 @@ endif
 
 set cscopequickfix=s-,c-,d-,i-,t-,e-
 set cst " use cscope for ctrl=] (tag search)
-
-
-map <f5> qq
-map <f6> q
-map <f7> @q
-map <C-up> 5k
-map <C-down> 5j
-map <leader>nt :NERDTreeToggle<CR>
-map <leader>tl :Tlist<CR>
-map <leader>gg :silent grep -r 
 
 set tags=./tags;/
 
