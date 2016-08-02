@@ -8,13 +8,13 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 Plugin 'bufexplorer.zip'
 Plugin 'jamessan/vim-gnupg'
-Plugin 'SuperTab--Van-Dewoestine'
+"Plugin 'SuperTab--Van-Dewoestine'
 Plugin 'bufkill.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
-Plugin 'garbas/vim-snipmate'
+"Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
 Plugin 'vimwiki/vimwiki'
 Plugin 'taglist.vim'
@@ -22,6 +22,9 @@ Plugin 'duracrisis/vim-fern-utils'
 Plugin 'mileszs/ack.vim'
 Plugin 'qfn'
 Plugin 'Shougo/vimshell.vim'
+Plugin 'SirVer/ultisnips'
+
+
 
 call vundle#end()
 
@@ -48,8 +51,9 @@ if has("gui_running")
     set guioptions-=T  "remove toolbar
     set guioptions-=r  "remove right scrollbar
     set guioptions-=L  "remove right scrollbar
-    set guioptions-=M
+    set guioptions-=m
 
+    set tb=
     if has("gui_win32")
         set guifont=Courier\ New:h12:cANSI
     endif
@@ -64,8 +68,9 @@ if has("gui_running")
 
 endif
 
-set cscopequickfix=s-,c-,d-,i-,t-,e-
+set cscopequickfix=s-,c-,d-,i-,t-,e-,g-,f-
 set cst " use cscope for ctrl=] (tag search)
+
 
 set tags=./tags;/
 
@@ -76,6 +81,9 @@ set expandtab
 set number
 set nowrap
 
+let g:UltiSnipsExpandTrigger="<c-p>"
 
 let g:vimwiki_list = [{'path': '/mnt/ienso/shared/Fernand/vimwiki/'},{'path': "~/ocean/vimwiki"}]
 let g:vimwiki_html_header_numbering=0/1/2/3/4
+autocmd FileType vimwiki setlocal tw=79
+autocmd FileType vimwiki setlocal noswapfile
