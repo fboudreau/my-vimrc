@@ -9,8 +9,6 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'bufexplorer.zip'
 Plugin 'jamessan/vim-gnupg'
 Plugin 'bufkill.vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
@@ -21,16 +19,18 @@ Plugin 'fboudreau/neovim-project-plugin'
 Plugin 'mileszs/ack.vim'
 Plugin 'qfn'
 Plugin 'bling/vim-airline'
-"Plugin 'ervandew/supertab'
 Plugin 'Shougo/neocomplcache'
 Plugin 'Shougo/neosnippet'
 Plugin 'Shougo/neosnippet-snippets'
 Plugin 'JamshedVesuna/vim-markdown-preview'
 Plugin 'joshdick/onedark.vim'
-Plugin 'Valloric/YouCompleteMe'
 Plugin 'wincent/command-t'
 Plugin 'tpope/vim-fugitive'
 Plugin 'vim-scripts/vim-auto-save'
+Plugin 'MattesGroeger/vim-bookmarks'
+Plugin 'tpope/vim-vinegar'
+Plugin 'rbgrouleff/bclose.vim'
+Plugin 'francoiscabrol/ranger.vim'
 
 call vundle#end()
 
@@ -99,6 +99,7 @@ set nowrap
 
 let g:vimwiki_table_mappings = 0
 
+let g:ranger_choice_file = '/tmp/ranger-choice.tmp'
 let g:vimwiki_list = [{'path': '/mnt/ienso/shared/Fernand/vimwiki/', 'syntax': 'markdown'},{'path': "~/ocean/vimwiki"}]
 let g:vimwiki_html_header_numbering=0/1/2/3/4
 autocmd FileType vimwiki setlocal tw=79
@@ -134,6 +135,7 @@ endif
 
 " bind K to grep word under cursor
 nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+"nnoremap Q :NERDTreeClose \| qa<CR>
 nnoremap Q :qa<CR>
 nnoremap W :Ack "\b<C-R><C-W>\b"<CR>:cw<CR>
 
@@ -182,3 +184,16 @@ let g:auto_save = 1  " enable AutoSave on Vim startup
 
 " Allows pressing Esc to exit insert mode when in terminal (:h term)
 tnoremap <Esc> <C-\><C-n>
+
+"let g:netrw_banner = 0
+"let g:netrw_liststyle = 3
+"let g:netrw_browse_split = 4
+"let g:netrw_altv = 1
+"let g:netrw_winsize = 15
+
+let g:ranger_replace_netrw = 1 " open ranger when vim open a directory
+
+nmap cp : let @* = expand("%:p")<CR>
+
+" let sessionoptions=
+
